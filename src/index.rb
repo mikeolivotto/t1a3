@@ -1,0 +1,6 @@
+# user story
+
+
+
+
+# pseudocode
