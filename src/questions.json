@@ -1,0 +1,38 @@
+{
+    "question1": { "The answer to this question is": { 
+        "a": "A. Not this",
+        "b": "B. Not this either",
+        "c": "C. The answer is always C!",
+        "d": "D. No, it's not this"
+         }
+    },
+    "question2": { "The answer to this question is": { 
+        "a": "A. Not this",
+        "b": "B. Not this either",
+        "c": "C. The answer is always C!",
+        "d": "D. No, it's not this"
+             }
+    },
+    "question3": { "The answer to this question is": { 
+        "a": "A. Not this",
+        "b": "B. Not this either",
+        "c": "C. The answer is always C!",
+        "d": "D. No, it's not this"
+             }
+    },
+    "question4": { "The answer to this question is": { 
+        "a": "A. Not this",
+        "b": "B. Not this either",
+        "c": "C. The answer is always C!",
+        "d": "D. No, it's not this"
+             }
+    },
+    "question5": { "The answer to this question is": { 
+        "a": "A. Not this",
+        "b": "B. Not this either",
+        "c": "C. The answer is always C!",
+        "d": "D. No, it's not this"
+             }
+    }
+
+}
