@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+git_source(:github) {|repo_name| "https://github.com/mikeolivotto/t1a3" }
 
 # gem "rails"
 
@@ -10,4 +10,8 @@ gem "colorize", "~> 0.8.1"
 
 gem "artii", "~> 2.1"
 
-gem "tty", "~> 0.7.0"
+gem "tty-prompt", "~> 0.23.1"
+
+gem "tty-font", "~> 0.5.0"
+
+gem "tty-box", "~> 0.7.0"

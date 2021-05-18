@@ -21,3 +21,40 @@
 # free text answers
 
 
+require_relative "trivia_player.rb"
+require 'colorize'
+require 'json'
+
+# Create an instance of the player
+# Update this to a gets or ARGV input?
+player = TriviaPlayer.new("Mike")
+
+# Display welcome message
+puts player.welcome_msg.colorize(:blue)
+puts ''
+
+# Instructions
+puts "You will be given a series of multiple choice questions."
+puts "Use your arrow keys to select the correct answer."
+
+# access / read the question file
+question_file = File.read('./questions.json')
+
+# parse JSON from the file into a ruby hash
+json = JSON.parse(question_file)
+p json
+
+finished = false
+
+# loop through questions until no more questions left
+until finished
+
+    # take the first yet-to-be-asked question, ask it
+
+    # display the answers
+
+    # user selects their answer
+    
+    # user answer added to answer array
+
+end
