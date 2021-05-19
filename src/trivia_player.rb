@@ -18,14 +18,16 @@ class TriviaPlayer
         # access and parse the JSON file
         @question_file = File.read('./questions.json')
         @json = JSON.parse(@question_file)
+        @question_counter = 1
 
 
         # begin the loop through the available questions
         @json.each do |question|
-            puts question["question"]
+            puts "Question #{@question_counter}: #{question["question"]}"
             question["answers"].each do | option, answer |
                 puts "#{option}. #{answer}"
             end
+            @question_counter += 1
             player_answer << gets.chomp
             # NEED TO PUT IN SOME ERROR HANDLING HERE!
         end
