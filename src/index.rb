@@ -30,31 +30,14 @@ require 'json'
 player = TriviaPlayer.new("Mike")
 
 # Display welcome message
-puts player.welcome_msg.colorize(:blue)
-puts ''
+puts player.welcome_msg
 
-# Instructions
-puts "You will be given a series of multiple choice questions."
-puts "Use your arrow keys to select the correct answer."
+# Start delivering questions
+player.play_game
 
-# access / read the question file
-question_file = File.read('./questions.json')
+# display the answer array
+p player.player_answer
 
-# parse JSON from the file into a ruby hash
-json = JSON.parse(question_file)
-p json
 
-finished = false
 
-# loop through questions until no more questions left
-until finished
 
-    # take the first yet-to-be-asked question, ask it
-
-    # display the answers
-
-    # user selects their answer
-    
-    # user answer added to answer array
-
-end

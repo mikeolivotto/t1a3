@@ -1,41 +1,43 @@
-{
-    "question1": { "The answer to this question is": { 
-        "a": "A. Not this",
-        "b": "B. Not this either",
-        "c": "C. The answer is always C!",
-        "d": "D. No, it's not this"
-         }
+[
+    { 
+        "question": "The answer to this question is",
+        "answers": { 
+            "a": "A. Not this",
+            "b": "B. Not this either",
+            "c": "C. The answer is always C!",
+            "d": "D. No, it's not this"
+        },
+        "correct_answer": "c"
     },
-    "question2": { "The answer to this question is": { 
-        "a": "A. Not this",
-        "b": "B. Not this either",
-        "c": "C. The answer is always C!",
-        "d": "D. No, it's not this"
-             }
+    { 
+        "question": "The answer to this other question is",
+        "answers": { 
+            "a": "A. Not this",
+            "b": "B. Not this either",
+            "c": "C. The answer is always C!",
+            "d": "D. No, it's not this"
+        },
+        "correct_answer": "c"
     },
-    "question3": { "The answer to this question is": { 
-        "a": "A. Not this",
-        "b": "B. Not this either",
-        "c": "C. The answer is always C!",
-        "d": "D. No, it's not this"
-             }
+    { 
+        "question": "And now the answer to this question is",
+        "answers": { 
+            "a": "A. No",
+            "b": "B. Probs not",
+            "c": "C. The answer is always C!",
+            "d": "D. Yeah, nah."
+        },
+        "correct_answer": "c"
     },
-    "question4": { "The answer to this question is": { 
-        "a": "A. Not this",
-        "b": "B. Not this either",
-        "c": "C. The answer is always C!",
-        "d": "D. No, it's not this"
-             }
-    },
-    "question5": { "The answer to this question is": { 
-        "a": "A. Not this",
-        "b": "B. Not this either",
-        "c": "C. The answer is always C!",
-        "d": "D. No, it's not this"
-             }
+    { 
+        "question": "Surely the answer to this question is",
+        "answers": { 
+            "a": "A. Don't do it",
+            "b": "B. I'm serious, it's not this",
+            "c": "C. The answer is always C!",
+            "d": "D. Trust me, it's not this."
+        },
+        "correct_answer": "c"
     }
-
-}
-
-
+]
 
