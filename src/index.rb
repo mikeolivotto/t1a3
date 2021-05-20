@@ -28,7 +28,7 @@ require 'json'
 player = TriviaPlayer.new("Mike")
 
 # Display welcome message
-puts player.welcome_msg
+player.welcome_msg
 
 # Start delivering questions
 player.play_game
@@ -37,6 +37,7 @@ player.play_game
 p player.player_answer
 
 player.player_score
+player.corrections
 
 
 
