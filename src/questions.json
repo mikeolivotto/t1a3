@@ -12,10 +12,10 @@
     { 
         "question": "The answer to this other question is",
         "answers": { 
-            "a": "A. Not this",
-            "b": "B. Not this either",
+            "a": "A. Don't pick this",
+            "b": "B. The answer is probably C",
             "c": "C. The answer is always C!",
-            "d": "D. No, it's not this"
+            "d": "D. Definitely not this"
         },
         "correct_answer": "c"
     },

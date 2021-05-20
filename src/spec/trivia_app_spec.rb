@@ -18,11 +18,11 @@ describe TriviaPlayer do
         expect(@player.name).to eq("Mike")
     end
 
-    it "should display a welcome message" do
-        msg = "Welcome, Mike"
-        expect(@player.welcome_msg).to eq(msg)
-    end
+    # it "should display a welcome message" do
+    #     msg = "Welcome, Mike"
+    #     expect(@player.welcome_msg).to eq(msg)
+    # end
 
-
+    
 
 end

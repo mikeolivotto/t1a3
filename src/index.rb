@@ -5,8 +5,6 @@
 # user should be given an overall score
 # user should be able to view the correct answers for questions they got wrong
 
-
-
 # pseudocode
 # 1. display a welcome message with instructions
 # 2. display multiple choice questions
@@ -38,6 +36,7 @@ player.play_game
 # display the answer array
 p player.player_answer
 
+player.player_score
 
 
 
