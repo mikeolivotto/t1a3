@@ -14,7 +14,9 @@ class TriviaGame
         @@games_played = 0
     end
 
+    # display number of games played when called
     def self.games_played
+        puts ""
         if @@games_played == 1
             puts "You have played #{@@games_played} game"
         else 
@@ -25,7 +27,7 @@ class TriviaGame
     # create a welcome message
     def welcome_msg
         # asciify the header
-        puts @@ascii.asciify('Trivia time!')
+        puts @@ascii.asciify('Trivia time!').red
         puts "Welcome, #{@name}".colorize(:blue)
         puts ""
         puts "You will be given a series of questions. Please select the answer you believe to be correct."
@@ -43,11 +45,11 @@ class TriviaGame
         @@json.each do |question|
 
             puts ""
-            puts "Q#{@question_counter}:"
-            player_answer << prompt.select("#{question["question"]}") do |menu|
+            puts "Q#{@question_counter}:".black.on_yellow
+            player_answer << prompt.select("#{question["question"].black.on_yellow}") do |menu|
                 question["answers"].each do | option, answer|
                     # menu.choice "#{option} #{answer}"
-                    menu.choice "- #{answer}", "#{option}"
+                    menu.choice "#{answer}", "#{option}"
                 end
             end
             @question_counter += 1
@@ -55,7 +57,7 @@ class TriviaGame
     end
 
     def player_score
-        puts @@ascii.asciify('Player score')
+        puts @@ascii.asciify('Player score').red
         #loop through player_answer array, compare to actual answers
         index_of_answer = 0
         player_answer.each do |answer|
@@ -75,7 +77,7 @@ class TriviaGame
         
         # display the correct answers to questions user got wrong (UNLESS they answeres all questions correctly)
         unless @score == @@json.length
-            puts @@ascii.asciify('Corrections')
+            puts @@ascii.asciify('Corrections').red
             puts "These are the correct answers to the questions you got wrong"
             # loop through player_answer array, pull out the user's incorrect answers and display correct answers
             index_of_answer = 0
@@ -86,7 +88,7 @@ class TriviaGame
                     # show the question
                     puts json_index["question"]
                     # show the correct answer
-                    puts json_index["answers"][json_index["correct_answer"]]
+                    puts json_index["answers"][json_index["correct_answer"]].green
                 end
                 index_of_answer += 1
             end
