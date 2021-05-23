@@ -12,6 +12,8 @@ class TriviaGame
         # @set the ascii font for headings
         @@ascii = Artii::Base.new :font => 'doom'
         @@games_played = 0
+        # initialize prompt
+        @@prompt = TTY::Prompt.new
     end
 
     # display number of games played when called
@@ -31,12 +33,16 @@ class TriviaGame
         # create a box around the welcome message
         print TTY::Box.frame "Welcome to Trivia Time, #{@name}!".colorize(:blue),
             "",
-            "You will be given a series of questions.", 
-            "Please select the answer you believe to be correct.", 
+            "Please select the answer you believe to be correct",
+            "by pressing #{"↑".black.on_white}/#{"↓".black.on_white} arrows to move and #{"ENTER".black.on_white} to select",
             "",
-            "(Press ↑/↓ arrow to move and Enter to select)",
+            "To start the game, press any key".black.on_yellow,
+            "(where's the 'any' key??)",
             padding: 1, 
             align: :center
+
+        @@prompt.keypress()
+        system "clear"
     end
 
     # logic for displaying questions and getting the user's answers
@@ -47,12 +53,12 @@ class TriviaGame
         # Add to @@games_played count
         @@games_played += 1
 
-        prompt = TTY::Prompt.new
+        
         @@json.each do |question|
 
             puts ""
             # puts "Q#{@question_counter}:".black.on_yellow
-            player_answer << prompt.select("Q#{@question_counter}: #{question["question"]}".black.on_yellow) do |menu|
+            player_answer << @@prompt.select("Q#{@question_counter}: #{question["question"]}".black.on_yellow) do |menu|
                 question["answers"].each do | option, answer|
                     # menu.choice "#{option} #{answer}"
                     menu.choice "#{answer}", "#{option}"
@@ -78,6 +84,11 @@ class TriviaGame
         # puts the score
         puts ""
         puts "You answered #{@score} of #{@@json.length} questions correctly."
+        puts ""
+        # Need to create logic to ask player what to do next
+        puts "What would you like to do next? (Play again, See correct answers, exit)"
+        @@prompt.keypress()
+        system "clear"
     end
 
     def corrections
