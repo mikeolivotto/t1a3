@@ -26,12 +26,31 @@ require 'artii'
 require "tty-prompt"
 require "tty-box"
 
+
+
+
 # clear the screen for the user
 system "clear"
 
+# set up how to handle command line arguments.
+file = './questions.json'
+ARGV.each do |arg|
+	if (arg == "-h") || (arg == "--help")
+		# call 'help' / 'usage' message method from the trivia game class
+        # for now put in a dummy help message
+        puts "It's a trivia app. Just answer the questions, mate."
+		exit
+    elsif arg == "easy"
+        file = './easy.json'
+    elsif arg == "hard"
+        file = './hard.json'
+	end
+end
+
+
 # Create an instance of the player
 # Update this to a gets or ARGV input?
-player = TriviaGame.new("Mike")
+player = TriviaGame.new("Mike", file)
 
 # Display welcome message
 player.welcome_msg
