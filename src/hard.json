@@ -1,0 +1,43 @@
+[
+    { 
+        "question": "The answer to this question is",
+        "answers": { 
+            "a": "Maybe it's this one",
+            "b": "Or this one",
+            "c": "Possibly this one",
+            "d": "You're not getting the answer that easily!"
+        },
+        "correct_answer": "c"
+    },
+    { 
+        "question": "The answer to this other question is",
+        "answers": { 
+            "a": "Surely this",
+            "b": "Maybe this",
+            "c": "Perhaps this",
+            "d": "Possibly this"
+        },
+        "correct_answer": "c"
+    },
+    { 
+        "question": "And now the answer to this question is",
+        "answers": { 
+            "a": "Potentially this one",
+            "b": "Probably not this, but also maybe",
+            "c": "Probably",
+            "d": "You could pick this. You could be wrong though."
+        },
+        "correct_answer": "c"
+    },
+    { 
+        "question": "Surely the answer to this question is",
+        "answers": { 
+            "a": "You picked hard mode, so don't blame this app for being dumb",
+            "b": "You had to make it difficult, didn't you",
+            "c": "The answer is known only by this app",
+            "d": "Good luck, mate."
+        },
+        "correct_answer": "c"
+    }
+]
+
