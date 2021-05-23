@@ -36,7 +36,10 @@ player.play_game
 # display the answer array
 p player.player_answer
 
+# Display the player's score
 player.player_score
+
+# Display the correct answers the questions the user got wrong
 player.corrections
 
 
