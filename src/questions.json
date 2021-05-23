@@ -2,40 +2,40 @@
     { 
         "question": "The answer to this question is",
         "answers": { 
-            "a": "A. Not this",
-            "b": "B. Not this either",
-            "c": "C. The answer is always C!",
-            "d": "D. No, it's not this"
+            "a": "Not this",
+            "b": "Not this either",
+            "c": "The answer is always C!",
+            "d": "No, it's not this"
         },
         "correct_answer": "c"
     },
     { 
         "question": "The answer to this other question is",
         "answers": { 
-            "a": "A. Don't pick this",
-            "b": "B. The answer is probably C",
-            "c": "C. The answer is always C!",
-            "d": "D. Definitely not this"
+            "a": "Don't pick this",
+            "b": "The answer is probably C",
+            "c": "The answer is always C!",
+            "d": "Definitely not this"
         },
         "correct_answer": "c"
     },
     { 
         "question": "And now the answer to this question is",
         "answers": { 
-            "a": "A. No",
-            "b": "B. Probs not",
-            "c": "C. The answer is always C!",
-            "d": "D. Yeah, nah."
+            "a": "No",
+            "b": "Probs not",
+            "c": "The answer is always C!",
+            "d": "Yeah, nah."
         },
         "correct_answer": "c"
     },
     { 
         "question": "Surely the answer to this question is",
         "answers": { 
-            "a": "A. Don't do it",
-            "b": "B. I'm serious, it's not this",
-            "c": "C. The answer is always C!",
-            "d": "D. Trust me, it's not this."
+            "a": "Don't do it",
+            "b": "I'm serious, it's not this",
+            "c": "The answer is always C!",
+            "d": "Trust me, it's not this."
         },
         "correct_answer": "c"
     }

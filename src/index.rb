@@ -23,6 +23,9 @@ require_relative "trivia_player.rb"
 require 'colorize'
 require 'json'
 require 'artii'
+require "tty-prompt"
+
+
 
 # Create an instance of the player
 # Update this to a gets or ARGV input?
@@ -33,9 +36,6 @@ player.welcome_msg
 
 # Start delivering questions
 player.play_game
-
-# display the answer array
-p player.player_answer
 
 # Display the player's score
 player.player_score

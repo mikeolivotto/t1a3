@@ -15,12 +15,16 @@ class TriviaGame
     end
 
     def self.games_played
-       p @@games_played        
+        if @@games_played == 1
+            puts "You have played #{@@games_played} game"
+        else 
+            puts "You have played #{@@games_played} games"    
+        end
     end
     
     # create a welcome message
     def welcome_msg
-        # ascii = Artii::Base.new :font => 'doom'
+        # asciify the header
         puts @@ascii.asciify('Trivia time!')
         puts "Welcome, #{@name}".colorize(:blue)
         puts ""
@@ -29,21 +33,24 @@ class TriviaGame
 
     # logic for displaying questions and getting the user's answers
     def play_game
+
         # Counter to be used to dynamically display question number (useful if questions are delivered randomly)
         @question_counter = 1
         # Add to @@games_played count
         @@games_played += 1
-        # begin the loop through the available questions
+
+        prompt = TTY::Prompt.new
         @@json.each do |question|
+
             puts ""
-            puts "Question #{@question_counter}: #{question["question"]}"
-            question["answers"].each do | option, answer |
-                puts "#{option}. #{answer}"
+            puts "Q#{@question_counter}:"
+            player_answer << prompt.select("#{question["question"]}") do |menu|
+                question["answers"].each do | option, answer|
+                    # menu.choice "#{option} #{answer}"
+                    menu.choice "- #{answer}", "#{option}"
+                end
             end
             @question_counter += 1
-            # get the player's answer
-            player_answer << gets.chomp
-            # NEED TO PUT IN SOME ERROR HANDLING HERE!
         end
     end
 
