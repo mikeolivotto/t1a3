@@ -22,10 +22,11 @@
 require_relative "trivia_player.rb"
 require 'colorize'
 require 'json'
+require 'artii'
 
 # Create an instance of the player
 # Update this to a gets or ARGV input?
-player = TriviaPlayer.new("Mike")
+player = TriviaGame.new("Mike")
 
 # Display welcome message
 player.welcome_msg
@@ -42,5 +43,6 @@ player.player_score
 # Display the correct answers the questions the user got wrong
 player.corrections
 
-
+# Display the number of games played by the user
+TriviaGame.games_played
 
