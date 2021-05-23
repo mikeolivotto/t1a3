@@ -27,10 +27,16 @@ class TriviaGame
     # create a welcome message
     def welcome_msg
         # asciify the header
-        puts @@ascii.asciify('Trivia time!').red
-        puts "Welcome, #{@name}".colorize(:blue)
-        puts ""
-        puts "You will be given a series of questions. Please select the answer you believe to be correct."
+        puts @@ascii.asciify('Trivia Time!').red
+        # create a box around the welcome message
+        print TTY::Box.frame "Welcome to Trivia Time, #{@name}!".colorize(:blue),
+            "",
+            "You will be given a series of questions.", 
+            "Please select the answer you believe to be correct.", 
+            "",
+            "(Press ↑/↓ arrow to move and Enter to select)",
+            padding: 1, 
+            align: :center
     end
 
     # logic for displaying questions and getting the user's answers
@@ -45,14 +51,15 @@ class TriviaGame
         @@json.each do |question|
 
             puts ""
-            puts "Q#{@question_counter}:".black.on_yellow
-            player_answer << prompt.select("#{question["question"].black.on_yellow}") do |menu|
+            # puts "Q#{@question_counter}:".black.on_yellow
+            player_answer << prompt.select("Q#{@question_counter}: #{question["question"]}".black.on_yellow) do |menu|
                 question["answers"].each do | option, answer|
                     # menu.choice "#{option} #{answer}"
                     menu.choice "#{answer}", "#{option}"
                 end
             end
             @question_counter += 1
+            system "clear"
         end
     end
 

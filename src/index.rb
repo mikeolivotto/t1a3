@@ -24,8 +24,10 @@ require 'colorize'
 require 'json'
 require 'artii'
 require "tty-prompt"
+require "tty-box"
 
-
+# clear the screen for the user
+system "clear"
 
 # Create an instance of the player
 # Update this to a gets or ARGV input?
