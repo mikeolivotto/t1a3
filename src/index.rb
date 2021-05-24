@@ -53,9 +53,9 @@ rescue InvalidNameError
     retry
 end
 
-prompt = TTY::Prompt.new
+$prompt = TTY::Prompt.new
 def difficulty
-    TTY::Prompt.new.select("Select question difficulty") do |menu|
+    $prompt.select("Select question difficulty") do |menu|
         menu.choice name: "Regular",  value: './regular.json'
         menu.choice name: "Easy", value: './easy.json'
         menu.choice name: "Hard",  value: './hard.json'
