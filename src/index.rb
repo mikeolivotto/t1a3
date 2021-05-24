@@ -13,11 +13,6 @@
 # 3. Display total score
 # 4. Display correct answers
 
-# IDEAS
-# True / false answers
-# multiple choice answers
-# free text answers
-
 
 require_relative "trivia_game.rb"
 require 'colorize'
@@ -29,23 +24,34 @@ require "tty-box"
 # clear the screen for the user
 system "clear"
 
+# Set default name and mode if not entered as command line arguments
+name = nil
+mode = './regular.json'
+
 # set up how to handle command line arguments.
-mode = './questions.json'
+# 3 arguments: -h or --help for game info, the mode (hard or easy), and player name
 ARGV.each do |arg|
 	if (arg == "-h") || (arg == "--help")
 		# call 'help' / 'usage' message method from the trivia game class
         # for now put in a dummy help message
         puts "It's a trivia app. Just answer the questions, mate."
-		exit
+		# exit
     elsif arg == "easy"
         mode = './easy.json'
+    elsif arg == "regular"
+        mode = './regular.json'
     elsif arg == "hard"
         mode = './hard.json'
+    else name = arg
 	end
 end
 
-puts "Please enter your name."
-name = STDIN.gets.chomp
+if name == nil
+    puts "Please enter your name."
+    name = STDIN.gets.chomp
+end
+
+
 
 # Create an instance of the game
 # Update this to a gets or ARGV input?
