@@ -119,7 +119,7 @@ class TriviaGame
     # method to ask for user's input for what to do next
     def what_next
         puts ""
-        sleep(1)
+        sleep(0.4)
         next_choice = @@prompt.select("What would you like to do next??") do |menu|
             menu.choice name: "View score", value: "a"
             menu.choice name: "View corrections", value: "b"
@@ -134,7 +134,11 @@ class TriviaGame
         # elsif next_choice == "c"
         #     play_game
         elsif next_choice == "d"
-            exit
+            system "clear"
+            puts "Thanks for playing"
+            sleep(1.2)
+            system "clear"
+            # exit
         end
 
         # system "clear"

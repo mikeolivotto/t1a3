@@ -24,19 +24,14 @@ require "tty-box"
 # clear the screen for the user
 system "clear"
 
-# Set default name and mode if not entered as command line arguments
-name = nil
-mode = './regular.json'
+# Set default name and mode to empty if not entered as command line arguments
+name = ''
+mode = ''
 
 # set up how to handle command line arguments.
 # 3 arguments: -h or --help for game info, the mode (hard or easy), and player name
 ARGV.each do |arg|
-	if name != nil
-        # MAY BE A GOOD PLACE TO PUT ERROR HANDLING!!!
-        puts "it looks like you entered the difficulty level incorrectly"
-        puts "well give you standard level for now"
-        sleep(3.5)
-    elsif (arg == "-h") || (arg == "--help")
+    if (arg == "-h") || (arg == "--help")
 		# call 'help' / 'usage' message method from the trivia game class
         # for now put in a dummy help message
         puts "It's a trivia app. Just answer the questions, mate."
@@ -51,17 +46,43 @@ ARGV.each do |arg|
 	end
 end
 
-# Request player name if not entered as command line argument
-if name == nil
-    puts "Please enter your name."
-    name = STDIN.gets.chomp
+
+# Create custom error for when name is empty
+class InvalidNameError < StandardError
 end
 
+# method to check if name is empty and raises error if so
+def validate_name(name)
+    name = name.strip
+    raise InvalidNameError, "Name must not be empty" if name.empty?
+    name
+end
+
+# Request player name if not entered as command line argument
+begin
+    if name == ''
+        puts "Please enter your name."
+        name = gets.chomp
+        validate_name(name)
+    end
+rescue InvalidNameError
+    retry
+end
+
+prompt = TTY::Prompt.new
+def difficulty
+    TTY::Prompt.new.select("Select question difficulty") do |menu|
+        menu.choice name: "Regular",  value: './regular.json'
+        menu.choice name: "Easy", value: './easy.json'
+        menu.choice name: "Hard",  value: './hard.json'
+    end  
+end
+
+
 # Request player's chosen mode if not entered as command line argument
-# if mode == nil
-#     puts "Select the difficulty level (easy, regular, hard)"
-#     mode = STDIN.gets.chomp
-# end
+if mode == ''
+    mode = difficulty
+end
 
 
 
@@ -75,12 +96,4 @@ player.welcome_msg
 # Start delivering questions
 player.play_game
 
-# # Display the player's score
-# player.player_score
-
-# # Display the correct answers the questions the user got wrong
-# player.corrections
-
-# # Display the number of games played by the user
-# TriviaGame.games_played
 
