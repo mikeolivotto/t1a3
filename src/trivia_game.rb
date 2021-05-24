@@ -1,7 +1,7 @@
 class TriviaGame
 
     attr_reader :name, :score, :player_answer
-    # initialise the game/player with the player's name, a score starting at zero, and an empty array for their answers
+    # initialise game with the player name, a score starting at zero, and an empty array for their answers
     def initialize(name, mode)        
         @name = name
         @score = 0
@@ -40,19 +40,18 @@ class TriviaGame
             "(where's the 'any' key??)",
             padding: 1, 
             align: :center
-
+        # Code will not proceed until a key press is registered
         @@prompt.keypress()
         system "clear"
     end
 
-    # logic for displaying questions and getting the user's answers
+    # logic for displaying questions and getting user answers
     def play_game
-
-        # Counter to be used to dynamically display question number (useful if questions are delivered randomly)
+        # Counter to dynamically display question number (useful if questions are delivered randomly)
         @question_counter = 1
         # Add to @@games_played count
         @@games_played += 1
-        
+        # Cycle through each of the questions
         @@json.each do |question|
             puts ""
             # puts "Q#{@question_counter}:".black.on_yellow
@@ -68,8 +67,7 @@ class TriviaGame
         what_next
     end
 
-
-
+    # logic for displaying user score
     def player_score
         system "clear"
         puts @@ascii.asciify('Player score').red
@@ -89,13 +87,12 @@ class TriviaGame
         puts ""
 
         what_next
-        # system "clear"
     end
 
     def corrections
         system "clear"
-        # display the correct answers to questions user got wrong (UNLESS they answeres all questions correctly)
-        unless @score == @@json.length
+        # display correct answers to Qs user got wrong (UNLESS they answered all questions correctly)
+        # unless @score == @@json.length
             puts @@ascii.asciify('Corrections').red
             puts "These are the correct answers to the questions you got wrong"
             # loop through player_answer array, pull out the user's incorrect answers and display correct answers
@@ -111,7 +108,7 @@ class TriviaGame
                 end
                 index_of_answer += 1
             end
-        end
+        # end
         what_next
     end
 
@@ -140,10 +137,5 @@ class TriviaGame
             system "clear"
             # exit
         end
-
-        # system "clear"
     end
-
-
-
 end

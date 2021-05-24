@@ -5,13 +5,13 @@
 # 4. should count the number of correct answers
 # 5. should display correct answers to the questions the user got wrong
 
-require_relative "../trivia_player.rb"
+require_relative "../trivia_game.rb"
 
 describe TriviaPlayer do
 
     before(:each) do
         # this piece of code runs before each test case defined in it block
-        @player = TriviaPlayer.new("Mike")
+        @player = TriviaGame.new("Mike")
     end
 
     it "instance must have a readable name" do
@@ -23,6 +23,6 @@ describe TriviaPlayer do
     #     expect(@player.welcome_msg).to eq(msg)
     # end
 
-    
+
 
 end
