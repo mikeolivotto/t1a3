@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ruby index.rb
+ruby index.rb $*

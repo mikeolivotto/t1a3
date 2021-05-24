@@ -46,10 +46,17 @@ ARGV.each do |arg|
 	end
 end
 
+# Request player name if not entered as command line argument
 if name == nil
     puts "Please enter your name."
     name = STDIN.gets.chomp
 end
+
+# Request player's chosen mode if not entered as command line argument
+# if mode == nil
+#     puts "Select the difficulty level (easy, regular, hard)"
+#     mode = STDIN.gets.chomp
+# end
 
 
 
