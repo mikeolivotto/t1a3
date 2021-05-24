@@ -121,10 +121,10 @@ class TriviaGame
         puts ""
         sleep(1)
         next_choice = @@prompt.select("What would you like to do next??") do |menu|
-            menu.choice "View score", "a"
-            menu.choice "View corrections", "b"
-            # menu.choice "Play again", "c"
-            menu.choice "Exit", "d"
+            menu.choice name: "View score", value: "a"
+            menu.choice name: "View corrections", value: "b"
+            menu.choice name: "Play again", value: "c", disabled: "(Feature coming soon)"
+            menu.choice name: "Exit", value: "d"
         end
         
         if next_choice == "a"
