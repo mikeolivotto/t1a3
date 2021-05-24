@@ -1,4 +1,4 @@
-# [Name of terminal app]
+# Trivia Time - Ruby Terminal App
 
 by Mike Olivotto
 
@@ -56,6 +56,10 @@ not sure whether to elaborate on this, or if it is even necessary
 
 
 
+![Control flow of multiple-choice question/answer terminal app](/Users/michaelolivotto/Documents/CA/assignments/T1A3/docs/terminal_app_flowchart.png)
+
+
+
 ## App creation
 
 
@@ -85,3 +89,13 @@ You must include:
 \- steps to install the application
 \- any dependencies required by the application to operate
 \- any system/hardware requirements
+
+
+
+### Dependencies
+
+- Artii
+- Colorize
+- TTY-prompt
+- TTY-box
+- Json
