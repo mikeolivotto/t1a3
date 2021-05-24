@@ -71,6 +71,7 @@ class TriviaGame
 
 
     def player_score
+        system "clear"
         puts @@ascii.asciify('Player score').red
         #loop through player_answer array, compare to actual answers
         index_of_answer = 0
@@ -86,14 +87,13 @@ class TriviaGame
         puts ""
         puts "You answered #{@score} of #{@@json.length} questions correctly."
         puts ""
-        # Need to create logic to ask player what to do next
-        # what_next
-        # @@prompt.keypress()
+
+        what_next
         # system "clear"
     end
 
     def corrections
-        
+        system "clear"
         # display the correct answers to questions user got wrong (UNLESS they answeres all questions correctly)
         unless @score == @@json.length
             puts @@ascii.asciify('Corrections').red
@@ -112,16 +112,18 @@ class TriviaGame
                 index_of_answer += 1
             end
         end
+        what_next
     end
 
     next_choice = nil
     # method to ask for user's input for what to do next
     def what_next
-        # sleep(1)
+        puts ""
+        sleep(1)
         next_choice = @@prompt.select("What would you like to do next??") do |menu|
             menu.choice "View score", "a"
             menu.choice "View corrections", "b"
-            menu.choice "Play again", "c"
+            # menu.choice "Play again", "c"
             menu.choice "Exit", "d"
         end
         
@@ -129,12 +131,13 @@ class TriviaGame
             player_score
         elsif next_choice == "b"
             corrections
-        elsif next_choice == "c"
-            play_game
+        # elsif next_choice == "c"
+        #     play_game
         elsif next_choice == "d"
             exit
         end
 
+        # system "clear"
     end
 
 
