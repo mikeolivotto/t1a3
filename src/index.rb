@@ -75,12 +75,12 @@ player.welcome_msg
 # Start delivering questions
 player.play_game
 
-# Display the player's score
-player.player_score
+# # Display the player's score
+# player.player_score
 
-# Display the correct answers the questions the user got wrong
-player.corrections
+# # Display the correct answers the questions the user got wrong
+# player.corrections
 
-# Display the number of games played by the user
-TriviaGame.games_played
+# # Display the number of games played by the user
+# TriviaGame.games_played
 

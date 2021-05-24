@@ -52,14 +52,12 @@ class TriviaGame
         @question_counter = 1
         # Add to @@games_played count
         @@games_played += 1
-
         
         @@json.each do |question|
-
             puts ""
             # puts "Q#{@question_counter}:".black.on_yellow
             player_answer << @@prompt.select("Q#{@question_counter}: #{question["question"]}".black.on_yellow) do |menu|
-                question["answers"].each do | option, answer|
+                question["answers"].each do | option, answer |
                     # menu.choice "#{option} #{answer}"
                     menu.choice "#{answer}", "#{option}"
                 end
@@ -67,19 +65,10 @@ class TriviaGame
             @question_counter += 1
             system "clear"
         end
+        what_next
     end
 
-    # method to ask for user's input for what to do next
-    def what_next
-        sleep(1)
-        @@prompt.select("What would you like to do next??") do |menu|
-            menu.choice "View score"
-            menu.choice "View corrections"
-            menu.choice "Play again"
-            menu.choice "Exit"
-        end
-        system "clear"
-    end
+
 
     def player_score
         puts @@ascii.asciify('Player score').red
@@ -98,9 +87,9 @@ class TriviaGame
         puts "You answered #{@score} of #{@@json.length} questions correctly."
         puts ""
         # Need to create logic to ask player what to do next
-        what_next
-        @@prompt.keypress()
-        system "clear"
+        # what_next
+        # @@prompt.keypress()
+        # system "clear"
     end
 
     def corrections
@@ -123,6 +112,29 @@ class TriviaGame
                 index_of_answer += 1
             end
         end
+    end
+
+    next_choice = nil
+    # method to ask for user's input for what to do next
+    def what_next
+        # sleep(1)
+        next_choice = @@prompt.select("What would you like to do next??") do |menu|
+            menu.choice "View score", "a"
+            menu.choice "View corrections", "b"
+            menu.choice "Play again", "c"
+            menu.choice "Exit", "d"
+        end
+        
+        if next_choice == "a"
+            player_score
+        elsif next_choice == "b"
+            corrections
+        elsif next_choice == "c"
+            play_game
+        elsif next_choice == "d"
+            exit
+        end
+
     end
 
 
