@@ -12,8 +12,6 @@ class TriviaGame
         # @set the ascii font for headings
         @@ascii = Artii::Base.new :font => 'doom'
         @@games_played = 0
-        # initialize prompt
-        @@prompt = TTY::Prompt.new
     end
 
     # display number of games played when called
@@ -41,7 +39,7 @@ class TriviaGame
             padding: 1, 
             align: :center
         # Code will not proceed until a key press is registered
-        @@prompt.keypress()
+        $prompt.keypress()
         system "clear"
     end
 
@@ -55,7 +53,7 @@ class TriviaGame
         @@json.each do |question|
             puts ""
             # puts "Q#{@question_counter}:".black.on_yellow
-            player_answer << @@prompt.select("Q#{@question_counter}: #{question["question"]}".black.on_yellow) do |menu|
+            player_answer << $prompt.select("Q#{@question_counter}: #{question["question"]}".black.on_yellow) do |menu|
                 question["answers"].each do | option, answer |
                     # menu.choice "#{option} #{answer}"
                     menu.choice "#{answer}", "#{option}"
@@ -117,7 +115,7 @@ class TriviaGame
     def what_next
         puts ""
         sleep(0.4)
-        next_choice = @@prompt.select("What would you like to do next??") do |menu|
+        next_choice = $prompt.select("What would you like to do next??") do |menu|
             menu.choice name: "View score", value: "a"
             menu.choice name: "View corrections", value: "b"
             menu.choice name: "Play again", value: "c", disabled: "(Feature coming soon)"
