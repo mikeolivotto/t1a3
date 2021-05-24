@@ -19,21 +19,18 @@
 # free text answers
 
 
-require_relative "trivia_player.rb"
+require_relative "trivia_game.rb"
 require 'colorize'
 require 'json'
 require 'artii'
 require "tty-prompt"
 require "tty-box"
 
-
-
-
 # clear the screen for the user
 system "clear"
 
 # set up how to handle command line arguments.
-file = './questions.json'
+mode = './questions.json'
 ARGV.each do |arg|
 	if (arg == "-h") || (arg == "--help")
 		# call 'help' / 'usage' message method from the trivia game class
@@ -41,16 +38,18 @@ ARGV.each do |arg|
         puts "It's a trivia app. Just answer the questions, mate."
 		exit
     elsif arg == "easy"
-        file = './easy.json'
+        mode = './easy.json'
     elsif arg == "hard"
-        file = './hard.json'
+        mode = './hard.json'
 	end
 end
 
+puts "Please enter your name."
+name = STDIN.gets.chomp
 
-# Create an instance of the player
+# Create an instance of the game
 # Update this to a gets or ARGV input?
-player = TriviaGame.new("Mike", file)
+player = TriviaGame.new(name, mode)
 
 # Display welcome message
 player.welcome_msg

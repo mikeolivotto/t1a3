@@ -2,12 +2,12 @@ class TriviaGame
 
     attr_reader :name, :score, :player_answer
     # initialise the game/player with the player's name, a score starting at zero, and an empty array for their answers
-    def initialize(name, file)        
+    def initialize(name, mode)        
         @name = name
         @score = 0
         @player_answer = []
         # access and parse the JSON question file
-        @@question_file = File.read(file)
+        @@question_file = File.read(mode)
         @@json = JSON.parse(@@question_file)
         # @set the ascii font for headings
         @@ascii = Artii::Base.new :font => 'doom'
@@ -111,8 +111,5 @@ class TriviaGame
                 index_of_answer += 1
             end
         end
-
-
     end
-
 end
