@@ -29,7 +29,7 @@ class TriviaGame
         # asciify the header
         puts @@ascii.asciify('Trivia Time!').red
         # create a box around the welcome message
-        print TTY::Box.frame "Welcome to Trivia Time, #{@name}!".colorize(:blue),
+        print TTY::Box.frame " Welcome to Trivia Time, #{@name}! ".light_blue.on_white,
             "",
             "Please select the answer you believe to be correct",
             "by pressing #{"↑".black.on_white}/#{"↓".black.on_white} arrows to move and #{"ENTER".black.on_white} to select",
@@ -87,29 +87,6 @@ class TriviaGame
         what_next
     end
 
-    # def corrections
-    #     system "clear"
-    #     # display correct answers to Qs user got wrong (UNLESS they answered all questions correctly)
-    #     # unless @score == @@json.length
-    #         puts @@ascii.asciify('Corrections').red
-    #         puts "These are the correct answers to the questions you got wrong"
-    #         # loop through player_answer array, pull out the user's incorrect answers and display correct answers
-    #         index_of_answer = 0
-    #         player_answer.each do |answer|
-    #             json_index = @@json[index_of_answer]
-    #             if answer != json_index["correct_answer"]
-    #                 puts ""
-    #                 # show the question
-    #                 puts json_index["question"]
-    #                 # show the correct answer
-    #                 puts json_index["answers"][json_index["correct_answer"]].green
-    #             end
-    #             index_of_answer += 1
-    #         end
-    #     # end
-    #     what_next
-    # end
-
     def corrections
         system "clear"
         # display correct answers to Qs user got wrong
@@ -127,7 +104,7 @@ class TriviaGame
             if answer != json_index["correct_answer"]
                 puts ""
                 # show the question
-                puts json_index["question"]
+                puts json_index["question"].black.on_yellow
                 # show the correct answer
                 puts json_index["answers"][json_index["correct_answer"]].green
             end
