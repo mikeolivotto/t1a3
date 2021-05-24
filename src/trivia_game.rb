@@ -69,6 +69,18 @@ class TriviaGame
         end
     end
 
+    # method to ask for user's input for what to do next
+    def what_next
+        sleep(1)
+        @@prompt.select("What would you like to do next??") do |menu|
+            menu.choice "View score"
+            menu.choice "View corrections"
+            menu.choice "Play again"
+            menu.choice "Exit"
+        end
+        system "clear"
+    end
+
     def player_score
         puts @@ascii.asciify('Player score').red
         #loop through player_answer array, compare to actual answers
@@ -86,7 +98,7 @@ class TriviaGame
         puts "You answered #{@score} of #{@@json.length} questions correctly."
         puts ""
         # Need to create logic to ask player what to do next
-        puts "What would you like to do next? (Play again, See correct answers, exit)"
+        what_next
         @@prompt.keypress()
         system "clear"
     end
@@ -112,4 +124,7 @@ class TriviaGame
             end
         end
     end
+
+
+
 end

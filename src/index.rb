@@ -31,7 +31,12 @@ mode = './regular.json'
 # set up how to handle command line arguments.
 # 3 arguments: -h or --help for game info, the mode (hard or easy), and player name
 ARGV.each do |arg|
-	if (arg == "-h") || (arg == "--help")
+	if name != nil
+        # MAY BE A GOOD PLACE TO PUT ERROR HANDLING!!!
+        puts "it looks like you entered the difficulty level incorrectly"
+        puts "well give you standard level for now"
+        sleep(3.5)
+    elsif (arg == "-h") || (arg == "--help")
 		# call 'help' / 'usage' message method from the trivia game class
         # for now put in a dummy help message
         puts "It's a trivia app. Just answer the questions, mate."
