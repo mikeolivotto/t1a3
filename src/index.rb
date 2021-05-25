@@ -12,10 +12,10 @@ system "clear"
 name = ''
 mode = ''
 
-# handle command line arguments: -h / --help, difficulty level, and player name
+# Handle command line arguments: -h / --help, difficulty level, and player name
 ARGV.each do |arg|
     if (arg == "-h") || (arg == "--help")
-		# call 'help' / 'usage' message method from the trivia game class
+		# Call 'help' / 'usage' message method from the trivia game class
         # for now put in a dummy help message
         puts "It's a trivia app. Just answer the questions, mate."
         puts ""
@@ -28,8 +28,8 @@ ARGV.each do |arg|
         mode = './hard.json'
     else name = arg
 	end
-end
 
+end
 
 # Create custom error for when name is empty
 class InvalidNameError < StandardError
@@ -49,6 +49,7 @@ begin
         name = STDIN.gets.strip.chomp
         validate_name(name)
     end
+
 rescue InvalidNameError
     retry
 end
