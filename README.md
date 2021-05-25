@@ -8,10 +8,26 @@ by Mike Olivotto
 
 ### Description
 
+This is a multiple-choice trivia app testing users on their knowledge of a given topic. The difficulty of the questions can be adjusted by selecting from easy, regular, and hard modes, and users can view both their score and corrections for questions they answered incorrectly.
+
+#### The problem
+
+Administering trivia games can be time consuming for markers comparing answers, and thus prone to human error. On the other hand players want feedback to improve their knowledge, and the timelier the feedback the better. This app solves all these problems by automating all the associated tasks and providing instant feedback.
+
+#### Audience
+
+The app is primarily designed with trivia enthusiasts and trivia hosts in mind, however test administrators & test takers (such as in a school setting) could be considered a secondary audience that would find value in this app due to the very closely related tasks in both settings.
+
+#### General usage
+
+Upon loading the app, the user will be prompted to enter their name and the desired difficulty level of the questions. At this point the user will be delivered a predetermined number of questions matching the requested difficulty level, for which they will select an answer from multiple choices using their keyboard to navigate the options.
+
 \- **describe** at a high level what the application will do
 \- **identify** the problem it will solve and **explain** why you are developing it
 \- **identify** the target audience
 \- **explain** how a member of the target audience will use it
+
+300-500 words
 
 
 
@@ -27,6 +43,8 @@ by Mike Olivotto
 \- error handling
 
 **Consult with your educator** to check your features are sufficient .
+
+300 words (approx. 100 words per feature)
 
 
 
@@ -56,7 +74,7 @@ not sure whether to elaborate on this, or if it is even necessary
 
 
 
-![Control flow of multiple-choice question/answer terminal app](/Users/michaelolivotto/Documents/CA/assignments/T1A3/docs/terminal_app_flowchart.png)
+![Control flow of multiple-choice question/answer terminal app](./docs/terminal_app_flowchart.png)
 
 
 
