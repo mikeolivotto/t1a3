@@ -1,41 +1,41 @@
 [
     { 
-        "question": "The first standard mode question",
+        "question": "What is the capital of Australia?",
         "answers": { 
-            "a": "Not this",
-            "b": "Not this either",
-            "c": "The answer is always C!",
-            "d": "No, it's not this"
+            "a": "Sydney",
+            "b": "Canberra",
+            "c": "ACT",
+            "d": "Melbourne"
+        },
+        "correct_answer": "b"
+    },
+    { 
+        "question": "What is the largest country by population?",
+        "answers": { 
+            "a": "Indonesia",
+            "b": "India",
+            "c": "USA",
+            "d": "China"
+        },
+        "correct_answer": "d"
+    },
+    { 
+        "question": "Which ocean is between North America and Europe?",
+        "answers": { 
+            "a": "Indian Ocean",
+            "b": "Pacific Ocean",
+            "c": "Atlantic Ocean",
+            "d": "Mediterranean Sea"
         },
         "correct_answer": "c"
     },
     { 
-        "question": "The answer to this other question is",
+        "question": "What is the world's driest continent?",
         "answers": { 
-            "a": "Don't pick this",
-            "b": "The answer is probably C",
-            "c": "The answer is always C!",
-            "d": "Definitely not this"
-        },
-        "correct_answer": "c"
-    },
-    { 
-        "question": "And now the answer to this question is",
-        "answers": { 
-            "a": "No",
-            "b": "Probs not",
-            "c": "The answer is always C!",
-            "d": "Yeah, nah."
-        },
-        "correct_answer": "c"
-    },
-    { 
-        "question": "Surely the answer to this question is",
-        "answers": { 
-            "a": "Don't do it",
-            "b": "I'm serious, it's not this",
-            "c": "The answer is always C!",
-            "d": "Trust me, it's not this."
+            "a": "Australia",
+            "b": "Africa",
+            "c": "Antarctica",
+            "d": "Asia"
         },
         "correct_answer": "c"
     }

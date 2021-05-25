@@ -1,41 +1,41 @@
 [
     { 
-        "question": "The first hard question",
+        "question": "What is the world's smallest country?",
         "answers": { 
-            "a": "Maybe it's this one",
-            "b": "Or this one",
-            "c": "Possibly this one",
-            "d": "You're not getting the answer that easily!"
+            "a": "Nauru",
+            "b": "Vatican City",
+            "c": "Monaco",
+            "d": "Andorra"
         },
-        "correct_answer": "c"
+        "correct_answer": "b"
     },
     { 
-        "question": "The answer to this other question is",
+        "question": "In what continent is Turkey located?",
         "answers": { 
-            "a": "Surely this",
-            "b": "Maybe this",
-            "c": "Perhaps this",
-            "d": "Possibly this"
+            "a": "Asia",
+            "b": "Africa",
+            "c": "Europe",
+            "d": "Asia and Europe"
         },
-        "correct_answer": "c"
+        "correct_answer": "d"
     },
     { 
-        "question": "And now the answer to this question is",
+        "question": "What is the capital of Kazakhstan",
         "answers": { 
-            "a": "Potentially this one",
-            "b": "Probably not this, but also maybe",
-            "c": "Probably",
-            "d": "You could pick this. You could be wrong though."
+            "a": "Astana",
+            "b": "Nur-Sultan",
+            "c": "Almaty",
+            "d": "Taraz"
         },
-        "correct_answer": "c"
+        "correct_answer": "b"
     },
     { 
-        "question": "Surely the answer to this question is",
+        "question": "Where would you find the world's only freshwater seals?",
         "answers": { 
-            "a": "You picked hard mode, so don't blame this app for being dumb",
-            "b": "You had to make it difficult, didn't you",
-            "c": "The answer is known only by this app",
-            "d": "Good luck, mate."
+            "a": "Caspian Sea",
+            "b": "Lake Titicaca, South America",
+            "c": "Lake Baikal, Russia",
+            "d": "Lake Vostok"
         },
         "correct_answer": "c"
     }

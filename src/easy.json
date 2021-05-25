@@ -1,43 +1,43 @@
 [
     { 
-        "question": "The first easy question",
+        "question": "What is the world's largest country?",
         "answers": { 
-            "a": "Not this",
-            "b": "Not this either",
-            "c": "This!",
-            "d": "No, it's not this"
+            "a": "China",
+            "b": "Canada",
+            "c": "Russia",
+            "d": "USA"
         },
         "correct_answer": "c"
     },
     { 
-        "question": "The answer to this other question is",
+        "question": "Where would you find the Eiffel Tower?",
         "answers": { 
-            "a": "Don't pick this",
-            "b": "The answer is probably C",
-            "c": "This one!",
-            "d": "Definitely not this"
+            "a": "Paris",
+            "b": "Nice",
+            "c": "Bordeaux",
+            "d": "Dijon"
+        },
+        "correct_answer": "a"
+    },
+    { 
+        "question": "What is the world's tallest mountain?",
+        "answers": { 
+            "a": "Mt Kosciuszko",
+            "b": "Mt Kilimanjaro",
+            "c": "Mt Everest",
+            "d": "Mt Saint Helens"
         },
         "correct_answer": "c"
     },
     { 
-        "question": "And now the answer to this question is",
+        "question": "On what continent would you find South Africa?",
         "answers": { 
-            "a": "No",
-            "b": "Probs not",
-            "c": "I'm telling you, it's this!",
-            "d": "Yeah, nah."
+            "a": "Australia",
+            "b": "Africa",
+            "c": "North America",
+            "d": "South America"
         },
-        "correct_answer": "c"
-    },
-    { 
-        "question": "Surely the answer to this question is",
-        "answers": { 
-            "a": "Don't do it",
-            "b": "I'm serious, it's not this",
-            "c": "The answer is always C!",
-            "d": "Trust me, it's not this."
-        },
-        "correct_answer": "c"
+        "correct_answer": "b"
     }
 ]
 
