@@ -62,13 +62,12 @@ class TriviaGame
             @question_counter += 1
             system "clear"
         end
+        calculate_score
         what_next
     end
 
     # logic for displaying user score
-    def player_score
-        system "clear"
-        puts @@ascii.asciify('Player score').red
+    def calculate_score
         #loop through player_answer array, compare to actual answers
         index_of_answer = 0
         player_answer.each do |answer|
@@ -78,12 +77,15 @@ class TriviaGame
             end
             index_of_answer += 1
         end
+    end
 
+    def player_score
+        system "clear"
+        puts @@ascii.asciify('Player score').red
         # puts the score
         puts ""
         puts "You answered #{@score} of #{@@json.length} questions correctly."
         puts ""
-
         what_next
     end
 
