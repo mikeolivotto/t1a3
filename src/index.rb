@@ -98,3 +98,6 @@ player.welcome_msg
 
 # Start delivering questions
 player.play_game
+
+# Start delivering questions
+TriviaGame.games_played

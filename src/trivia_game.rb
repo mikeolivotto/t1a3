@@ -12,16 +12,16 @@ class TriviaGame
         @question_file = File.read(mode)
         @json = JSON.parse(@question_file)
         # @set the ascii font for headings
-        @@games_played = 0
+        @@played = 0
     end
 
     # Display number of games played when called
     def self.games_played
         puts ""
-        if @@games_played == 1
+        if @@played == 1
             puts "You have played 1 game"
         else 
-            puts "You have played #{@@games_played} games"    
+            puts "You have played #{@@played} games"    
         end
 
     end
@@ -49,8 +49,8 @@ class TriviaGame
     def play_game
         # Counter to dynamically display question number (useful if questions are delivered randomly)
         @question_counter = 1
-        # Add to @@games_played count
-        @@games_played += 1
+        # Add to @@played count
+        @@played += 1
         # Cycle through each of the questions
         @json.each do |question|
             puts ""
@@ -150,7 +150,7 @@ class TriviaGame
             puts "Thanks for playing"
             sleep(1.8)
             system "clear"
-            exit
+            # exit
         end
     end
 end
