@@ -146,11 +146,11 @@ class TriviaGame
         #     play_game
         elsif next_choice == "d"
             system "clear"
+            puts $ascii.asciify('Goodbye!').red
             puts "Thanks for playing"
-            sleep(1.2)
+            sleep(1.8)
             system "clear"
-            # exit
+            exit
         end
-
     end
 end

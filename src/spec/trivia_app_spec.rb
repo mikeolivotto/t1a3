@@ -24,7 +24,6 @@ describe TriviaGame do
         expect(@player.name).to eq("Mike")
     end
 
-
     # Test for difficulty mode
     it "instance must have a difficulty mode" do
         # Since the 'easy' mode is defined for @player, the answer to the first question should be "c"
@@ -32,7 +31,7 @@ describe TriviaGame do
     end
 
     # Test that user score is calculated correctly
-    it "instance should calculate the score" do
+    it "Calculate the score" do
         # The answers to the easy questions in order are c,a,c,b
         # Score should equal 3 as TriviaGame is instantiated with 1 wrong answer
         expect(@player.calculate_score).to eq(3)

@@ -87,7 +87,20 @@ In addition, labels were used to help prioritise tasks, assigning a range betwee
 
 ### Testing
 
-OUTLINE HOW TESTING WAS PERFORMED
+RSpec has been employed as the testing method of choice. Tests have been designed to cover four major features:
+
+* The instance must have a name
+* The instance must have a difficulty mode selected and load the corresponding JSON file
+* Calculate the score based on number of correct answers
+* Pull out questions the user answered wrong and provide the correct answer
+
+
+
+The tests instantiate a game with the name of "Mike" and the 'easy' mode file selected. It also runs a test case based on 3 correct answers and 1 incorrect. The expected results for each test can be seen by viewing the `trivia_app_spec.rb` file in the `/spec` folder.
+
+
+
+![RSpec tests](./docs/tests.png)
 
 
 
@@ -134,6 +147,10 @@ The application also relies on the following Ruby Gem dependencies:
 - [Colorize](https://github.com/fazibear/colorize)
 - [TTY-prompt](https://github.com/piotrmurach/tty-prompt)
 - [TTY-box](https://github.com/piotrmurach/tty-box)
+
+
+
+[RSpec](https://rspec.info/) is included for development testing purposes, however this gem is not necessary for the functioning of the app.
 
 
 
