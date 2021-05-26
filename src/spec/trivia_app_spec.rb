@@ -1,41 +1,46 @@
 require_relative "../trivia_game.rb"
 require 'json'
+require 'colorize'
+require 'artii'
+require "tty-prompt"
+require "tty-box"
+
+# # Global variable to instantiate TTY-Prompt
+$prompt = TTY::Prompt.new
+
+# # Global variable to instantiate Artii
+$ascii = Artii::Base.new
 
 describe TriviaGame do
 
     before(:each) do
         # this piece of code runs before each test case defined in it block
         @player = TriviaGame.new("Mike", "./easy.json")
+        @player.player_answer = ["c", "b", "c", "b"]
     end
 
+    # Test that name argument gets passed through to name variable
     it "instance must have a name" do
         expect(@player.name).to eq("Mike")
     end
 
-    # it "should display a welcome message" do
-    #     msg = "Welcome, Mike"
-    #     expect(@player.welcome_msg).to eq(msg)
-    # end
-
 
     # Test for difficulty mode
     it "instance must have a difficulty mode" do
-        expect(@@question_file).to eq(File.read(easy))
-        ./easy.json
+        # Since the 'easy' mode is defined for @player, the answer to the first question should be "c"
+        expect(@player.json[0]["correct_answer"]).to eq("c")
     end
 
-    # Test for questions and answers displaying
-    # it "instance must have a readable name" do
-    #     expect(@player.name).to eq("Mike")
-    # end
+    # Test that user score is calculated correctly
+    it "instance should calculate the score" do
+        # The answers to the easy questions in order are c,a,c,b
+        # Score should equal 3 as TriviaGame is instantiated with 1 wrong answer
+        expect(@player.calculate_score).to eq(3)
+    end
 
-    # Test for user score
-    # it "instance must have a readable name" do
-    #     expect(@player.name).to eq("Mike")
-    # end
 
-    # Test for correct answers
-    # it "instance must have a readable name" do
+    # Test that answer corrections are displayed correctly
+    # it "instance should display the correct answers" do
     #     expect(@player.name).to eq("Mike")
     # end
 

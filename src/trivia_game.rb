@@ -1,14 +1,15 @@
 class TriviaGame
 
-    attr_reader :name, :score, :player_answer
+    attr_reader :name, :score,  :json
+    attr_accessor :player_answer
     # Initialise game with the player name, a score starting at zero, and an empty array for their answers
     def initialize(name, mode)        
         @name = name
         @score = 0
         @player_answer = []
         # access and parse the JSON question file
-        @@question_file = File.read(mode)
-        @@json = JSON.parse(@@question_file)
+        @question_file = File.read(mode)
+        @json = JSON.parse(@question_file)
         # @set the ascii font for headings
         @@games_played = 0
     end
@@ -50,7 +51,7 @@ class TriviaGame
         # Add to @@games_played count
         @@games_played += 1
         # Cycle through each of the questions
-        @@json.each do |question|
+        @json.each do |question|
             puts ""
             # Puts "Q#{@question_counter}:".black.on_yellow
             player_answer << $prompt.select("Q#{@question_counter}: #{question["question"]}".black.on_yellow) do |menu|
@@ -71,12 +72,13 @@ class TriviaGame
         index_of_answer = 0
         player_answer.each do |answer|
             # If answer is correct, increase score count
-            if answer == @@json[index_of_answer]["correct_answer"]
+            if answer == @json[index_of_answer]["correct_answer"]
                 @score += 1
             end
 
             index_of_answer += 1
         end
+        score
     end
 
     def player_score
@@ -84,7 +86,7 @@ class TriviaGame
         puts $ascii.asciify('Player score').red
         # Puts the score
         puts ""
-        puts "You answered #{@score} of #{@@json.length} questions correctly."
+        puts "You answered #{@score} of #{@json.length} questions correctly."
         puts ""
         what_next
     end
@@ -94,7 +96,7 @@ class TriviaGame
         # Display correct answers to Qs user got wrong
         puts $ascii.asciify('Corrections').red
 
-        if @score == @@json.length
+        if @score == @json.length
             puts "You genius, you got everything right! No corrections needed!"
         else
             puts "These are the correct answers to the questions you got wrong"
@@ -103,7 +105,7 @@ class TriviaGame
         # Loop through player_answer array, pull out the user's incorrect answers and display correct answers
         index_of_answer = 0
         player_answer.each do |answer|
-            json_index = @@json[index_of_answer]
+            json_index = @json[index_of_answer]
             if answer != json_index["correct_answer"]
                 puts ""
                 # Show the question
