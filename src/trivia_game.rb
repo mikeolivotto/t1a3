@@ -1,12 +1,13 @@
 class TriviaGame
 
-    attr_reader :name, :score,  :json
+    attr_reader :name, :score,  :json, :corrected_answers
     attr_accessor :player_answer
     # Initialise game with the player name, a score starting at zero, and an empty array for their answers
     def initialize(name, mode)        
         @name = name
         @score = 0
         @player_answer = []
+        @corrected_answers = []
         # access and parse the JSON question file
         @question_file = File.read(mode)
         @json = JSON.parse(@question_file)
@@ -63,6 +64,7 @@ class TriviaGame
             system "clear"
         end
         calculate_score
+        corrected_array
         what_next
     end
 
@@ -91,6 +93,19 @@ class TriviaGame
         what_next
     end
 
+    def corrected_array
+        # Loop through player_answer array, pull out the user's incorrect answers and display correct answers
+        index_of_answer = 0
+        player_answer.each do |answer|
+            json_index = @json[index_of_answer]
+            if answer != json_index["correct_answer"]
+                @corrected_answers << [json_index["question"], json_index["answers"][json_index["correct_answer"]]]
+            end
+            index_of_answer += 1
+        end
+        @corrected_answers
+    end
+
     def corrections
         system "clear"
         # Display correct answers to Qs user got wrong
@@ -102,19 +117,27 @@ class TriviaGame
             puts "These are the correct answers to the questions you got wrong"
         end
 
-        # Loop through player_answer array, pull out the user's incorrect answers and display correct answers
-        index_of_answer = 0
-        player_answer.each do |answer|
-            json_index = @json[index_of_answer]
-            if answer != json_index["correct_answer"]
-                puts ""
-                # Show the question
-                puts json_index["question"].black.on_yellow
-                # Show the correct answer
-                puts json_index["answers"][json_index["correct_answer"]].green
-            end
-            index_of_answer += 1
+        # # Loop through player_answer array, pull out the user's incorrect answers and display correct answers
+        # index_of_answer = 0
+        # player_answer.each do |answer|
+        #     json_index = @json[index_of_answer]
+        #     if answer != json_index["correct_answer"]
+        #         puts ""
+        #         # Show the question
+        #         puts json_index["question"].black.on_yellow
+        #         # Show the correct answer
+        #         puts json_index["answers"][json_index["correct_answer"]].green
+        #         @corrected_answers << [json_index["question"], json_index["correct_answer"]]
+        #     end
+        #     index_of_answer += 1
+        # end
+
+        @corrected_answers.each do | pair |
+            puts ""
+            puts pair[0].black.on_yellow
+            puts pair[1].green
         end
+
         what_next
     end
 

@@ -38,10 +38,9 @@ describe TriviaGame do
         expect(@player.calculate_score).to eq(3)
     end
 
-
     # Test that answer corrections are displayed correctly
-    # it "instance should display the correct answers" do
-    #     expect(@player.name).to eq("Mike")
-    # end
+    it "instance should display the correct answers" do
+        expect(@player.corrected_array).to eq([["Where would you find the Eiffel Tower?", "Paris"]])
+    end
 
 end
