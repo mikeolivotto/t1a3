@@ -93,26 +93,24 @@ OUTLINE HOW TESTING WAS PERFORMED
 
 ## Installation & Usage Instructions
 
-Begin by forking or cloning this repo to your local machine.
+Ruby is required to run this application. [Download Ruby here.](https://www.ruby-lang.org/en/downloads/) 
 
-### Recommended installation
+You will also need to have the Bundler Gem installed on your machine; if you do not have it enter the command `gem install bundler`
 
-1. From the application root directory (`/src`) install the app with the following command: `./install.sh`
-2. Run the app: `./trivia.sh`
+### Installation
 
-### Manual Installation
+1. Begin by forking or cloning this repo to your local machine.
+2. Install the app from the root directory (`/src`) with the  command `./install.sh `
 
-1. From the application's root directory (`/src`), install dependencies by running the command `bundle install`
-   - If you do not have the Bundler Gem installed on your machine, you will need to run that first by running `gem install bundler`
-2. Run the app: `ruby index.rb`
+### Running the app
 
-###  Usage
+Run the app: `./trivia.sh`
 
-- The app can be run with up to 3 arguments, in any order:
-  - `-h` or `--help` to view the help instructions
-  - The player's first name*
-  - `easy`, `regular` or `hard` to nominate question difficulty mode*
-  - All answers and options can be selected by pressing the ↑/↓ arrows to move and Enter to select.
+The app can be run with up to 3 arguments, in any order:
+
+- `-h` or `--help` to view the help instructions
+- The player's first name*
+- `easy`, `regular` or `hard` to nominate question difficulty mode*
 
 **Notes**: 
 
@@ -120,11 +118,17 @@ Begin by forking or cloning this repo to your local machine.
   - eg. `ruby index.rb Mike O easy hard` would result in the programming recognising player name as 'O' and the difficulty level as hard.
 - The application can be run without including arguments at run time. The application will prompt you for these upon starting.
 
+###  Usage
+
+All answers and options can be selected by pressing the ↑/↓ arrows to move and Enter to select.
+
+
+
 ### System and Hardware requirements
 
 This application has been designed and tested to run on MacOS 11.2.3, but should run on any Ruby-capable machine. Users obviously need a monitor (to see the app) and keyboard (for user input).
 
-Ruby is required to run this application. [Download Ruby here.](https://www.ruby-lang.org/en/downloads/) The application also relies on the following Ruby Gem dependencies:
+The application also relies on the following Ruby Gem dependencies:
 
 - [Artii](https://rubygems.org/gems/artii/versions/2.1.2)
 - [Colorize](https://github.com/fazibear/colorize)
