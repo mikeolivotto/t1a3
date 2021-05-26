@@ -63,6 +63,7 @@ class TriviaGame
             @question_counter += 1
             system "clear"
         end
+        puts $ascii.asciify('Game complete!').red
         calculate_score
         corrected_array
         what_next
