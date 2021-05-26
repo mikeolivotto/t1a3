@@ -1,20 +1,14 @@
-# Test cases
-# 1. Test is the user instance is created
-# 2. should display a welcome message and instructions
-# 3. should add answers to an array
-# 4. should count the number of correct answers
-# 5. should display correct answers to the questions the user got wrong
-
 require_relative "../trivia_game.rb"
+require 'json'
 
-describe TriviaPlayer do
+describe TriviaGame do
 
     before(:each) do
         # this piece of code runs before each test case defined in it block
-        @player = TriviaGame.new("Mike")
+        @player = TriviaGame.new("Mike", "./easy.json")
     end
 
-    it "instance must have a readable name" do
+    it "instance must have a name" do
         expect(@player.name).to eq("Mike")
     end
 
@@ -24,5 +18,25 @@ describe TriviaPlayer do
     # end
 
 
+    # Test for difficulty mode
+    it "instance must have a difficulty mode" do
+        expect(@@question_file).to eq(File.read(easy))
+        ./easy.json
+    end
+
+    # Test for questions and answers displaying
+    # it "instance must have a readable name" do
+    #     expect(@player.name).to eq("Mike")
+    # end
+
+    # Test for user score
+    # it "instance must have a readable name" do
+    #     expect(@player.name).to eq("Mike")
+    # end
+
+    # Test for correct answers
+    # it "instance must have a readable name" do
+    #     expect(@player.name).to eq("Mike")
+    # end
 
 end

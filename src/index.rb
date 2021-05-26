@@ -40,8 +40,6 @@ ARGV.each do |arg|
             padding: 1, 
             align: :center,
             width: 60
-
-
     elsif arg == "easy"
         mode = './easy.json'
     elsif arg == "regular"
