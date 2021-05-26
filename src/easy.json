@@ -1,6 +1,6 @@
 [
     { 
-        "question": "What is the world's largest country?",
+        "question": "What is the world's largest country by size?",
         "answers": { 
             "a": "China",
             "b": "Canada",

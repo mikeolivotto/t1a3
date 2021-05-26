@@ -19,7 +19,7 @@ class TriviaGame
     def self.games_played
         puts ""
         if @@games_played == 1
-            puts "You have played #{@@games_played} game"
+            puts "You have played 1 game"
         else 
             puts "You have played #{@@games_played} games"    
         end
@@ -116,21 +116,6 @@ class TriviaGame
         else
             puts "These are the correct answers to the questions you got wrong"
         end
-
-        # # Loop through player_answer array, pull out the user's incorrect answers and display correct answers
-        # index_of_answer = 0
-        # player_answer.each do |answer|
-        #     json_index = @json[index_of_answer]
-        #     if answer != json_index["correct_answer"]
-        #         puts ""
-        #         # Show the question
-        #         puts json_index["question"].black.on_yellow
-        #         # Show the correct answer
-        #         puts json_index["answers"][json_index["correct_answer"]].green
-        #         @corrected_answers << [json_index["question"], json_index["correct_answer"]]
-        #     end
-        #     index_of_answer += 1
-        # end
 
         @corrected_answers.each do | pair |
             puts ""
