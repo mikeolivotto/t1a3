@@ -10,7 +10,6 @@ class TriviaGame
         @@question_file = File.read(mode)
         @@json = JSON.parse(@@question_file)
         # @set the ascii font for headings
-        @@ascii = Artii::Base.new :font => 'doom'
         @@games_played = 0
     end
 
@@ -28,7 +27,7 @@ class TriviaGame
     # Create a welcome message
     def welcome_msg
         # Asciify the header
-        puts @@ascii.asciify('Trivia Time!').red
+        puts $ascii.asciify('Trivia Time!').red
         # Create a box around the welcome message
         print TTY::Box.frame " Welcome to Trivia Time, #{@name}! ".light_blue.on_white,
             "",
@@ -82,7 +81,7 @@ class TriviaGame
 
     def player_score
         system "clear"
-        puts @@ascii.asciify('Player score').red
+        puts $ascii.asciify('Player score').red
         # Puts the score
         puts ""
         puts "You answered #{@score} of #{@@json.length} questions correctly."
@@ -93,7 +92,7 @@ class TriviaGame
     def corrections
         system "clear"
         # Display correct answers to Qs user got wrong
-        puts @@ascii.asciify('Corrections').red
+        puts $ascii.asciify('Corrections').red
 
         if @score == @@json.length
             puts "You genius, you got everything right! No corrections needed!"
