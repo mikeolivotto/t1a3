@@ -32,7 +32,7 @@ Upon loading the app, the user will be prompted to enter their name and the desi
    The foundation of the app, a series of questions are displayed to the user, each with a selection of possible answers for the user to choose from. The user can then select the answer using arrow keys, preventing any potential mishaps that can come from free text entry.
    Loops are used to cycle through the array of questions in the JSON file.
 
-   ![Question difficulty menu](./docs/question.png)
+   ![Question difficulty menu](./docs/multiple-choice.gif)
    
 
 3. **Display user score**
