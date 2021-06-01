@@ -2,6 +2,8 @@
 
 by Mike Olivotto - GitHub repo: https://github.com/mikeolivotto/t1a3
 
+<iframe width="878" height="494" src="https://www.youtube.com/embed/83L5827D0ns" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## About the app
 
 This is a multiple-choice trivia app testing users on their knowledge of a given topic. The difficulty of the questions can be adjusted by selecting from easy, regular, and hard modes, and users can view both their score and corrections for questions they answered incorrectly.
