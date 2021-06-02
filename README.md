@@ -6,7 +6,7 @@ by Mike Olivotto - GitHub repo: https://github.com/mikeolivotto/t1a3
 
 This is a multiple-choice trivia app testing users on their knowledge of a given topic. The difficulty of the questions can be adjusted by selecting from easy, regular, and hard modes, and users can view both their score and corrections for questions they answered incorrectly.
 
-<img src="./docs/trivia_time.png">
+![Trivia Time app](./docs/trivia_time.png)
 
 #### The problem
 
